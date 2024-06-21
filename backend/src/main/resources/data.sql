@@ -22,3 +22,12 @@ TIMESTAMP WITH TIME ZONE '2024-06-20T21:50:07.12345Z',TIMESTAMP WITH TIME ZONE '
 
 INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('2.0',
 TIMESTAMP WITH TIME ZONE '2025-06-21T21:50:07.12345Z',TIMESTAMP WITH TIME ZONE '2026-06-21T21:50:07.12345Z',1);
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha HTML', 'Trilha pricipal do curso', 1,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZiUWaTbyq5Qc5EIMBPBOJ6vSH4EYJclp5w&s', 1, 1);
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Tire suas duvidas', 2,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadTiHc6FDmpvK9NB4-NN332odjipWB2u91Q&s', 2, 1);
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives ', 'Lives Exclusivas para assinantes', 3,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZiUWaTbyq5Qc5EIMBPBOJ6vSH4EYJclp5w&s', 0, 1);
