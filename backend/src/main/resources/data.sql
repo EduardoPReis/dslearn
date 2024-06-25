@@ -31,3 +31,12 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives ', 'Lives Exclusivas para assinantes', 3,
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZiUWaTbyq5Qc5EIMBPBOJ6vSH4EYJclp5w&s', 0, 1);
+
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id,prerequisite_id) VALUES ('Capítulo 1', 'Inicio de lógica para Html',1,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadTiHc6FDmpvK9NB4-NN332odjipWB2u91Q&s',1, null);
+
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id,prerequisite_id) VALUES ('Capítulo 2', 'Tags e introdução CSS',2,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadTiHc6FDmpvK9NB4-NN332odjipWB2u91Q&s',1, 1);
+
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id,prerequisite_id) VALUES ('Capítulo 3', 'HTML 5',3,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadTiHc6FDmpvK9NB4-NN332odjipWB2u91Q&s',1, 2)
