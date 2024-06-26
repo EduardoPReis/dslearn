@@ -41,5 +41,7 @@ INSERT INTO tb_section (title, description, position, img_Uri, resource_id,prere
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id,prerequisite_id) VALUES ('Capítulo 3', 'HTML 5',3,
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadTiHc6FDmpvK9NB4-NN332odjipWB2u91Q&s',1, 2);
 
-INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refound_Moment, avaliable, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2024-06-20T22:50:07.12345Z',null,true,false);
-INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refound_Moment, avaliable, only_Update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2024-06-20T22:50:07.12345Z',null,true,false);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refound_Moment, avaliable, only_Update) VALUES 
+(1, 1, TIMESTAMP WITH TIME ZONE '2024-06-20T22:50:07.12345Z',null,true,false);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refound_Moment, avaliable, only_Update) VALUES 
+(2, 1, TIMESTAMP WITH TIME ZONE '2024-06-20T22:50:07.12345Z',null,true,false);
