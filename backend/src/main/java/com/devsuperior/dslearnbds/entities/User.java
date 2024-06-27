@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,16 +32,21 @@ public class User implements Serializable {
 		joinColumns = @JoinColumn(name = "user_id"),
 		inverseJoinColumns = @JoinColumn(name = "role_id"))	
 	private Set<Role>roles = new HashSet<>();
+	
+	@ManyToOne
+	@JoinColumn(name = "notification_id")
+	private Notification notifications;
 
 	public User() {
 	}
 
-	public User(Long id, String name, String email, String password) {
+	public User(Long id, String name, String email, String password, Notification notification) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.notifications = notification;
 	}
 
 	public Long getId() {
@@ -81,6 +87,14 @@ public class User implements Serializable {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Notification getNotifications() {
+		return notifications;
+	}
+
+	public void setNotifications(Notification notifications) {
+		this.notifications = notifications;
 	}
 
 	@Override
