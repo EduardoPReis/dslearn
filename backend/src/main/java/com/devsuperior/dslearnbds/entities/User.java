@@ -1,7 +1,9 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -12,7 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,20 +35,18 @@ public class User implements Serializable {
 		inverseJoinColumns = @JoinColumn(name = "role_id"))	
 	private Set<Role>roles = new HashSet<>();
 	
-	@ManyToOne
-	@JoinColumn(name = "notification_id")
-	private Notification notifications;
+	@OneToMany(mappedBy = "user")
+	private List<Notification> notifications = new ArrayList<>();
 
 	public User() {
 	}
 
-	public User(Long id, String name, String email, String password, Notification notification) {
+	public User(Long id, String name, String email, String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.notifications = notification;
 	}
 
 	public Long getId() {
@@ -85,16 +85,8 @@ public class User implements Serializable {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
-	public Notification getNotifications() {
+	public List<Notification> getNotifications() {
 		return notifications;
-	}
-
-	public void setNotifications(Notification notifications) {
-		this.notifications = notifications;
 	}
 
 	@Override
