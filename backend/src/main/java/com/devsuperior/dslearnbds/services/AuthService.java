@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.dslearnbds.entities.User;
 import com.devsuperior.dslearnbds.repositories.UserRepository;
+import com.devsuperior.dslearnbds.services.exceptions.ForbiddenException;
+import com.devsuperior.dslearnbds.services.exceptions.UnAuthorizedException;
 
 @Service
 public class AuthService {
@@ -22,7 +24,7 @@ public class AuthService {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		return repository.findByEmail(username);
 	}catch (Exception e) {
-		throw new UnauthorizedClientException("Invalid User");
+		throw new ForbiddenException("Invalid User");
 	}
   }	
 	
@@ -30,7 +32,7 @@ public class AuthService {
 		User user = authenticated();
 		
 		if(!user.getId().equals(userId) && !user.hasHole("ROLE_ADMIN")) {
-			throw new UnauthorizedClientException("Acess denied");
+			throw new UnAuthorizedException("Acess denied");
 		}
 	}
 }
