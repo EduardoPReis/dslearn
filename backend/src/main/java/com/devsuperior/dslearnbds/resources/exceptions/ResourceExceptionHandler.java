@@ -62,7 +62,7 @@ public class ResourceExceptionHandler {
 	
 	@ExceptionHandler(ForbiddenException.class)
 	public ResponseEntity<OauthCustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
-		OauthCustomError err = new OauthCustomError("Forbidden", e.getMessage());	
+		OauthCustomError err = new OauthCustomError("Acess_Denied", e.getMessage());	
 		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
 	}
 	

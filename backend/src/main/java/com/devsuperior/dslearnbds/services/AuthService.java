@@ -24,7 +24,7 @@ public class AuthService {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		return repository.findByEmail(username);
 	}catch (Exception e) {
-		throw new ForbiddenException("Invalid User");
+		throw new UnAuthorizedException("Invalid User");
 	}
   }	
 	
@@ -32,7 +32,7 @@ public class AuthService {
 		User user = authenticated();
 		
 		if(!user.getId().equals(userId) && !user.hasHole("ROLE_ADMIN")) {
-			throw new UnAuthorizedException("Acess denied");
+			throw new ForbiddenException("Acess denied");
 		}
 	}
 }
